@@ -1,5 +1,6 @@
 
 import 'package:bmi_calculator/auth/Signup.dart';
+import 'package:bmi_calculator/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 class SignIn extends StatefulWidget {
@@ -17,7 +18,7 @@ class _SignInState extends State<SignIn> {
         email: emailcontroller.text,
         password: passcontroller.text,
       );
-
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         showDialog(
@@ -25,7 +26,10 @@ class _SignInState extends State<SignIn> {
             builder: (BuildContext context) {
               return AlertDialog(
                 content: Container(
-                  child: Text("Username does not exist"),
+                  child: Text("Username does not exist", style: TextStyle(
+                    color: Colors.red,
+                    fontWeight: FontWeight.w400
+                  ),),
                 ),
               );
             });
@@ -116,10 +120,8 @@ class _SignInState extends State<SignIn> {
           }
           return null;
         },
-
       ),
     ),
-
      Padding(
        padding: const EdgeInsets.symmetric(vertical: 8),
        child: TextFormField(
@@ -168,21 +170,11 @@ class _SignInState extends State<SignIn> {
           )), )
         ],
       ),
-   const   Center(
-        child: Text("Or", style: TextStyle(
-            fontSize: 12 ,
-            fontWeight: FontWeight.w400,
-            color: Colors.grey
-        )),
-      ),
-
-
     ],
     )),
               ),
               ),
           ),
-
         ],
       ),
     );

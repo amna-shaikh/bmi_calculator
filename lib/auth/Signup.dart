@@ -1,6 +1,7 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import '../home.dart';
 import 'loginpage.dart';
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -17,6 +18,7 @@ Future SignUp() async {
       email: emailcontroller.text,
       password: passcontroller.text,
     );
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
   }
   on FirebaseAuthException catch (e){
     if (e.code == 'email-already-in-use'){
