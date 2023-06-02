@@ -1,4 +1,5 @@
 import 'package:bmi_calculator/auth/Signup.dart';
+import 'package:bmi_calculator/splash.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +7,7 @@ import 'auth/loginpage.dart';
 import 'home.dart';
 
 void main()async {
-  WidgetsFlutterBinding.ensureInitialized();
+ WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());
 }
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
           } else if (snapshot.hasData) {
             return HomeScreen();
           } else {
-            return SignIn();
+            return SplashScreen();
           }
         },
       ),

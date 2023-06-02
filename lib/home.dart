@@ -16,10 +16,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.indigo[900],
+      backgroundColor: Colors.indigo[500],
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor:  Colors.indigo[900],
+        backgroundColor:  Colors.indigo[500],
         title: Text("BMI"),
         centerTitle: true,
         actions: [
@@ -88,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       SizedBox(height: 10,),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.indigo[900],
+                          backgroundColor: Colors.indigo[500],
                           foregroundColor: Colors.white,
                         ),
                         child: Text('Show'),
