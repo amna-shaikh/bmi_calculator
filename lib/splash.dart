@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:bmi_calculator/auth/loginpage.dart';
 import 'package:flutter/material.dart';
@@ -9,17 +11,47 @@ class SplashScreen extends StatefulWidget {
 }
 class _SplashScreenState extends State<SplashScreen> {
   @override
+  void initState() {
+    Future.delayed(Duration(seconds: 3), (){
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context)=> SignIn()));
+    });
+    // TODO: implement initState
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
-    return AnimatedSplashScreen(
-      splash:Lottie.network("https://assets2.lottiefiles.com/packages/lf20_3ejhEJ/over/data.json",),
+    return Scaffold(
+      backgroundColor: Colors.indigo[500],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset("assets/splash.png"),
+            SizedBox(height: 30,),
+              CircularProgressIndicator(
+                color: Colors.white70,
+              )
+
+          ],
+        ),
+      ),
+    );
+
+
+
+
+    /*AnimatedSplashScreen(
+      splash:AssetImage("assets/images.png"),
+      //Lottie.network("https://assets2.lottiefiles.com/packages/lf20_3ejhEJ/over/data.json",),
       nextScreen: SignIn() ,
       backgroundColor: Colors.indigo[500]!,
       splashIconSize: 800,
-      duration: 4000,
+      duration: 5000,
       splashTransition: SplashTransition.sizeTransition,
-      animationDuration: Duration(milliseconds: 1000),
+      animationDuration: Duration(seconds: 2),
 
-    );
+    );*/
 
 
 

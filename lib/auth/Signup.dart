@@ -37,7 +37,7 @@ Future SignUp() async {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor: Colors.indigo[900],
+      backgroundColor: Colors.indigo[500],
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -56,7 +56,7 @@ Future SignUp() async {
             child: Container(
               height: double.infinity,
               width: double.infinity,
-              decoration: const BoxDecoration(color: Colors.white ,
+              decoration: const BoxDecoration(color: Colors.white70 ,
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(25.0) ,
@@ -119,10 +119,10 @@ Future SignUp() async {
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.indigo[900],
+                            backgroundColor: Colors.indigo[500],
                             foregroundColor: Colors.white,
                           ),
-                          child: Text('Create Account'),
+                          child: Text('Create Account', style: TextStyle(fontSize: 15 , fontWeight: FontWeight.w500),),
                           onPressed: (){
                             if (_formKey.currentState!.validate()) {
                              SignUp();
@@ -133,27 +133,19 @@ Future SignUp() async {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             const Text("Already have account?", style: TextStyle(
-                                fontSize: 12 ,
+                                fontSize: 15 ,
                                 fontWeight: FontWeight.w400,
                                 color: Colors.grey
                             )),
                             TextButton(onPressed: (){
                               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignIn()));
                             }, child:Text("Login", style: TextStyle(
-                                fontSize: 12 ,
+                                fontSize: 15 ,
                                 fontWeight: FontWeight.w400,
                                 color: Colors.blue
                             )), )
                           ],
                         ),
-                        const   Center(
-                          child: Text("Or", style: TextStyle(
-                              fontSize: 12 ,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.grey
-                          )),
-                        ),
-
 
                       ],
                     )),

@@ -35,7 +35,9 @@ class _HomeScreenState extends State<HomeScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            child: Text("Hi ${user!.email}" , style: TextStyle(
+            child: Text("Hi"
+              //  " ${user!.email}"
+              , style: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: 25,
               color: Colors.white
@@ -90,8 +92,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.indigo[500],
                           foregroundColor: Colors.white,
+
                         ),
-                        child: Text('Show'),
+                        child: Text('Show Result', style: TextStyle(fontSize: 20),),
                         onPressed: (){
                           if (_formKey.currentState!.validate()) {
                           show();
