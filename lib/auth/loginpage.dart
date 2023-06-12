@@ -14,11 +14,16 @@ class _SignInState extends State<SignIn> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   Future signin() async {
     try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
+     final UserCredential user = await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: emailcontroller.text,
         password: passcontroller.text,
       );
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+      
+      if(user  != null)
+       {
+         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+       }
+
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         showDialog(
