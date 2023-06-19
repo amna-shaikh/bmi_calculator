@@ -1,6 +1,6 @@
 # bmi_calculator
 
-A new Flutter project.
+This is first project of Summer Internship Program of Learn and Build.
 
 ## Getting Started
 

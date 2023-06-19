@@ -18,7 +18,11 @@ Future SignUp() async {
       email: emailcontroller.text,
       password: passcontroller.text,
     );
+<<<<<<< HEAD
     if(userCredential  != null)
+=======
+     if(userCredential  != null)
+>>>>>>> origin/master
     {
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
     }
