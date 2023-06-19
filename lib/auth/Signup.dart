@@ -18,7 +18,10 @@ Future SignUp() async {
       email: emailcontroller.text,
       password: passcontroller.text,
     );
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+    if(userCredential  != null)
+    {
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+    }
   }
   on FirebaseAuthException catch (e){
     if (e.code == 'email-already-in-use'){
@@ -37,6 +40,7 @@ Future SignUp() async {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.indigo[500],
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
